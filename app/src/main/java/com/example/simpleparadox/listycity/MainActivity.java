@@ -1,6 +1,7 @@
 package com.example.simpleparadox.listycity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -19,7 +20,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -65,16 +68,33 @@ public class MainActivity extends AppCompatActivity {
         cityAdapter = new CustomList(MainActivity.this, cityDataList);
         cityList.setAdapter(cityAdapter);
 
+// TODO: RMOVE THE FOLLOWING COMMENTS
         //Now using the collection reference, we will fetch the data (if any) and display it in the ListView.
-        collectionReference
-                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//        collectionReference
+//                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                for (DocumentSnapshot doc : task.getResult()) {
+//                    Log.d(TAG, String.valueOf(doc.getData().get("province_name")));
+//                    String city = doc.getId();
+//                    String province = (String) doc.getData().get("province_name");
+//                    cityDataList.add(new City(city, province)); // Adding the cities and provinces from Firestore.
+//                }
+//                cityAdapter.notifyDataSetChanged(); // Notifying the adapter to render any new data fetched from the cloud.
+//            }
+//        });
+
+        // Now listening to all the changes in the database and get notified, note that offline support is enabled by default
+        collectionReference.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                for (DocumentSnapshot doc : task.getResult()) {
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                // clear the old list
+                cityDataList.clear();
+                for (QueryDocumentSnapshot doc : queryDocumentSnapshots){
                     Log.d(TAG, String.valueOf(doc.getData().get("province_name")));
                     String city = doc.getId();
                     String province = (String) doc.getData().get("province_name");
-                    cityDataList.add(new City(city, province)); // Adding the cities and provinces from Firestore.
+                    cityDataList.add(new City(city, province)); // Adding the cities and provinces from FireStore.
                 }
                 cityAdapter.notifyDataSetChanged(); // Notifying the adapter to render any new data fetched from the cloud.
             }
@@ -105,8 +125,11 @@ public class MainActivity extends AppCompatActivity {
                                 public void onSuccess(Void aVoid) {
                                     // These are a method which gets executed when the task is successful.
                                     Log.d(TAG, "Data addition successful");
-                                    cityDataList.add(new City(cityName, provinceName));
-                                    cityAdapter.notifyDataSetChanged(); // Notifying the adapter to render any new values in the ListView.
+
+// TODO: RMOVE THE FOLLOWING COMMENTS
+
+//                                    cityDataList.add(new City(cityName, provinceName));
+//                                    cityAdapter.notifyDataSetChanged(); // Notifying the adapter to render any new values in the ListView.
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
