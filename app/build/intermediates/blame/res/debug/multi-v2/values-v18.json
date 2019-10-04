@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Rohan\\Desktop\\Coursework\\Fall 2019\\CMPUT 301\\ListyCity-custom\\CMPUT-301-CustomList\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Rohan\\.gradle\\caches\\transforms-2\\files-2.1\\4b1d54629fa0914950d4d0ce1b8264ea\\appcompat-1.0.2\\res\\values-v18\\values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}

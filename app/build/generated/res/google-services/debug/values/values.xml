@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">348947066205-hpps59cnaklqc285v0jmfq5v3du5b21r.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://listystore-88e27.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">348947066205</string>
+    <string name="google_api_key" translatable="false">AIzaSyBcE-039z__lMj1NWfh2VBFkd77yS0VUm8</string>
+    <string name="google_app_id" translatable="false">1:348947066205:android:979b7b68b2491948084cb4</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBcE-039z__lMj1NWfh2VBFkd77yS0VUm8</string>
+    <string name="google_storage_bucket" translatable="false">listystore-88e27.appspot.com</string>
+    <string name="project_id" translatable="false">listystore-88e27</string>
+</resources>

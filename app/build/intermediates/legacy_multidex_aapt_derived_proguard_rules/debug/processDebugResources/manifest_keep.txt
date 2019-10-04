@@ -1,0 +1,4 @@
+# Referenced at C:\Users\Rohan\Desktop\Coursework\Fall 2019\CMPUT 301\ListyCity-custom\CMPUT-301-CustomList\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:16
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at C:\Users\Rohan\Desktop\Coursework\Fall 2019\CMPUT 301\ListyCity-custom\CMPUT-301-CustomList\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:16
+-keep class androidx.multidex.MultiDexApplication { <init>(); }
