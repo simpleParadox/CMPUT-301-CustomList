@@ -68,23 +68,8 @@ public class MainActivity extends AppCompatActivity {
         cityAdapter = new CustomList(MainActivity.this, cityDataList);
         cityList.setAdapter(cityAdapter);
 
-// TODO: RMOVE THE FOLLOWING COMMENTS
-        //Now using the collection reference, we will fetch the data (if any) and display it in the ListView.
-//        collectionReference
-//                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                for (DocumentSnapshot doc : task.getResult()) {
-//                    Log.d(TAG, String.valueOf(doc.getData().get("province_name")));
-//                    String city = doc.getId();
-//                    String province = (String) doc.getData().get("province_name");
-//                    cityDataList.add(new City(city, province)); // Adding the cities and provinces from Firestore.
-//                }
-//                cityAdapter.notifyDataSetChanged(); // Notifying the adapter to render any new data fetched from the cloud.
-//            }
-//        });
-
-        // Now listening to all the changes in the database and get notified, note that offline support is enabled by default
+        // Now listening to all the changes in the database and get notified, note that offline support is enabled by default.
+        // Note: The data stored in Firestore is sorted alphabetically and per their ASCII values. Therefore, adding a new city will not be appended to the list.
         collectionReference.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
@@ -126,10 +111,6 @@ public class MainActivity extends AppCompatActivity {
                                     // These are a method which gets executed when the task is successful.
                                     Log.d(TAG, "Data addition successful");
 
-// TODO: RMOVE THE FOLLOWING COMMENTS
-
-//                                    cityDataList.add(new City(cityName, provinceName));
-//                                    cityAdapter.notifyDataSetChanged(); // Notifying the adapter to render any new values in the ListView.
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
