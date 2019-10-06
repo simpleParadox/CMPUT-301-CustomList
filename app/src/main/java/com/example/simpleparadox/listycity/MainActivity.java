@@ -53,20 +53,21 @@ public class MainActivity extends AppCompatActivity {
         addCityEditText = findViewById(R.id.add_cty_field);
         addProvinceEditText = findViewById(R.id.add_province_edit_text);
 
-//         Access a Cloud Firestore instance from your Activity
-        db = FirebaseFirestore.getInstance();
-
-
         // Get a reference to the ListView and create an object for the city list.
         cityList = findViewById(R.id.city_list);
         cityDataList = new ArrayList<>();
 
-        // Get a top-level reference to the collection.
-        final CollectionReference collectionReference = db.collection("Cities");
-
         // Set the adapter for the listView to the CustomAdapter that we created in Lab 3.
         cityAdapter = new CustomList(MainActivity.this, cityDataList);
         cityList.setAdapter(cityAdapter);
+
+
+//         Access a Cloud Firestore instance from your Activity
+        db = FirebaseFirestore.getInstance();
+
+        // Get a top-level reference to the collection.
+        final CollectionReference collectionReference = db.collection("Cities");
+
 
         // Now listening to all the changes in the database and get notified, note that offline support is enabled by default.
         // Note: The data stored in Firestore is sorted alphabetically and per their ASCII values. Therefore, adding a new city will not be appended to the list.
