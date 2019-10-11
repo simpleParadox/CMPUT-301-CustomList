@@ -19,14 +19,6 @@ public class City implements Comparable<City>{
 
     @Override
     public int compareTo(City o) {
-        int cityCompare = city.compareTo(o.getCityName());
-        int provinceCompare = province.compareTo(o.getProvinceName());
-
-        if (cityCompare > 0 || provinceCompare > 0)
-            return 1;
-        else if (cityCompare == 0 && provinceCompare == 0)
-            return 0;
-        else
-            return -1;
+        return city.compareTo(o.getCityName());
     }
 }
