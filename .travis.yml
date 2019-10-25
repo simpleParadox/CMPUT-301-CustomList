@@ -23,7 +23,7 @@ android:
     - sys-img-armeabi-v7a-android-17
 branches:
   only:
-    - travis_ci
+    - master
 before_install:
  - chmod +x gradlew
 before_install:
