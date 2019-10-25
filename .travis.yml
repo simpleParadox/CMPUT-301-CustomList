@@ -12,8 +12,6 @@ android:
 
     # The SDK version used to compile your project
     - android-29
-before_install:
- - chmod +x gradlew
     # Additional components
     - extra-google-google_play_services
     - extra-google-m2repository
@@ -26,3 +24,5 @@ before_install:
 branches:
   only:
     - travis_ci
+before_install:
+ - chmod +x gradlew
