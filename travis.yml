@@ -24,5 +24,4 @@ android:
     - sys-img-armeabi-v7a-android-17
 branches:
   only:
-    - A
-    - master
+    - travis_ci
