@@ -1,9 +1,11 @@
 language: android
 jdk: oraclejdk8
+
 env:
   global:
     - ANDROID_TARGET=android-22
     - ANDROID_ABI=armeabi-v7a
+
 android:
   components:
     # Uncomment the lines below if you want to
@@ -31,11 +33,14 @@ android:
     # The line should look like this after interpolation:
     # - sys-img-armeabi-v7a-android-22
     - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
-branches:
-  only:
-    - travis_ci
-    - more_travis_ci
+
+licenses:
+    - 'android-sdk-license-.+'
+
 before_install:
+  # Accept sdk licenses
+  - yes | sdkmanager "platforms;$ANDROID_TARGET"
+
   # Get gradle
   - chmod +x gradlew
   - wget http://services.gradle.org/distributions/gradle-5.3-bin.zip
@@ -54,3 +59,9 @@ before_install:
   
   # The app will now automatically be installed and tested via
   # the command `gradle connectedCheck`
+
+
+branches:
+  only:
+    - travis_ci
+    - more_travis_ci
