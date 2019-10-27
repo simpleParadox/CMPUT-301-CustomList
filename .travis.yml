@@ -59,9 +59,3 @@ before_install:
   
   # The app will now automatically be installed and tested via
   # the command `gradle connectedCheck`
-
-
-branches:
-  only:
-    - travis_ci
-    - more_travis_ci
