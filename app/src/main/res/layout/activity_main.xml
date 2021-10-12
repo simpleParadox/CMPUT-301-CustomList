@@ -6,12 +6,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/add_city_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8">
+        </EditText>
+        <EditText
+            android:id="@+id/add_province_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="7">
+        </EditText>
+        <Button
+            android:id="@+id/add_city_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add City">
+        </Button>
+    </LinearLayout>
     <ListView
         android:id="@+id/city_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </ListView>
-
 </LinearLayout>
