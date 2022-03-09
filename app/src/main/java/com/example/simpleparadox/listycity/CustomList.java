@@ -65,10 +65,4 @@ public class CustomList extends ArrayAdapter<City> {
         return;
     }
 
-    @Test
-    public void addCityTest(){
-        int listSize = list.getCount();
-        list.addCity(new City("Halifax", "NS");
-        assertEquals(list.getCount(), listSize + 1);
-    }
 }
