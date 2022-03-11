@@ -49,5 +49,13 @@ public class customListTest {
         assertTrue(customList.deleteCity(city));
     }
 
+    @Test
+    public void countCities() {
+
+        customList.addCity(new City("Edmonton", "AB"));
+
+        assertEquals(customList.countCities(), 1);
+    }
+
 }
 
