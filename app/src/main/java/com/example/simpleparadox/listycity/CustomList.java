@@ -1,3 +1,5 @@
+
+
 package com.example.simpleparadox.listycity;
 
 import android.content.Context;
@@ -9,8 +11,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -45,6 +45,25 @@ public class CustomList extends ArrayAdapter<City> {
         provinceName.setText(city.getProvinceName());
 
         return view;
+
+    }
+
+    /**
+     * this function gets the size of the list
+     * @return
+     */
+
+    public int getCount() {
+        return cities.size();
+    }
+
+    /**
+     * this function would add a city object to the list.
+     */
+
+    public void addCity(City city) {
+
+        return;
 
     }
 }
