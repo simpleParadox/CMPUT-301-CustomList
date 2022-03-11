@@ -1,3 +1,5 @@
+package com.example.simpleparadox.tests;
+
 import static org.junit.Assert.assertEquals;
 
 import com.example.simpleparadox.listycity.City;
