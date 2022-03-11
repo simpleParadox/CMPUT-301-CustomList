@@ -16,7 +16,7 @@ public class customListTest {
 
     @Before
     public void createList() {
-        customList=  new CustomList(null, new ArrayList<>());
+        customList=  new CustomList(null, new ArrayList<City>());
     }
 
     @Test
